@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
+
+  
+html
+{
+    scroll-behavior: smooth;
+}
+
+*{
+
+    font-family: "Rethink Sans", sans-serif;
+    font-optical-sizing: auto;
+}
+
+body
+{
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+.title{
+    justify-content: left;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+.nav
+{
+    align-items: center;
+    background-color: #93bbec;
+    top: 15px;
+    padding-left: 20px;
+    display: flex;
+    padding-bottom: 5px;
+    width: 100%;
+    justify-content: center; /* Agar elemen di dalam .nav berada di tengah secara horizontal */
+    align-items: center;
+}
+
+.nav ul li
+{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+
+}
+
+
+
+.nav ul li a 
+{
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 300;
+    color: white;
+    transition: color .2s ease;
+    padding: 3px 0;
+    margin-bottom: 10px;
+    top: 5px;
+    
+    &:hover 
+    {
+      &::after, &::before 
+      {
+        width: 100%;
+        left: 0;
+      }
+      
+    }
+    
+    &::after, &::before 
+    {
+      content: ''; 
+      position: absolute;
+      top: calc(100% + 5px);
+      width: 0;
+      right: 0;
+      height: 2px;
+    }
+
+    &::before 
+    {
+      transition: width .4s cubic-bezier(0.51, 0.18, 0, 0.88) .1s;
+      background: white;
+    }
+    
+    &::after 
+    {
+      transition: width .2s cubic-bezier(0.29, 0.18, 0.26, 0.83);
+      background: #eab6d0;
+    }
+}
+
+button 
+{
+
+    background-color: transparent;
+    border: 0.125em solid white;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    line-height: normal;
+
+    min-height: 3em;
+    outline: none;
+    padding: 1em 2.3em;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  
+    touch-action: manipulation;
+    will-change: transform;
+}
+   
+   button:disabled 
+   {
+    pointer-events: none;
+   }
+   
+   button:hover 
+   {
+    color: #fff;
+    background-color: #eab6d0;
+    
+    transform: translateY(-1.5px);
+   }
+   
+   button:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+/* intro */
+
+#intro{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    height: 500px;
+}
+
+.intro-left .pre-text{
+    text-transform: capitalize;
+    font-size: 25px;
+    color: #eab6d0;
+    margin-left: 50px;
+}
+.intro-left .text{
+    text-transform: capitalize;
+    margin-left: 50px;
+    font-size: 45px;
+    margin-top: 10px;
+}
+
+img{
+    
+    border-radius: 50%;
+    height: 100px;
+}
+
+.icon-link 
+{
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg>');
+    width: 16px;  /* lebar ikon */
+    height: 16px; /* tinggi ikon */
+    display: inline-block;
+}  
